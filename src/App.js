@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{Component} from 'react';
+import TopTitle from './component/top_title'
+import MiddleTitle from './component/middle_title'
+import ContentContainer from "./component/content_container"
 import './App.css';
+import './script'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  state = {
+    TopTitle:"My PortFolio",
+    MiddleTitle:"< Welcome to My World />"
+  }
+
+  render(){
+    let state = this.state
+    return (
+      <div className="App">
+        <TopTitle title={state.TopTitle}></TopTitle>
+        <MiddleTitle title={state.MiddleTitle}></MiddleTitle>
+        <ContentContainer></ContentContainer>
+      </div>
+    );
+  }
 }
 
 export default App;
